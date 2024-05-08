@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,7 @@ public class HomeController {
 	}
 
 	@RequestMapping(path = "/me", method = RequestMethod.GET)
+    @PreAuthorize("isAuthenticated()")
 	public ResponseEntity<User> authenticatedUser() {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
@@ -27,8 +29,5 @@ public class HomeController {
 		return ResponseEntity.ok(currentUser);
 	}
 	
-	@GetMapping("/hello")
-	public String data() {
-	  return "hello";
-	}
+	
 }
