@@ -42,7 +42,7 @@ public class UserService {
 			return null;
 		}
 
-		var user = new User();
+		User user = new User();
 		user.setFullName(input.getFullName());
 		user.setEmail(input.getEmail());
 		user.setPassword(passwordEncoder.encode(input.getPassword()));

@@ -45,7 +45,7 @@ public class AdminSeeder implements ApplicationListener<ContextRefreshedEvent> {
             return;
         }
 
-        var user = new User();
+        User user = new User();
             user.setFullName(userDto.getFullName());
             user.setEmail(userDto.getEmail());
             user.setPassword(passwordEncoder.encode(userDto.getPassword()));
