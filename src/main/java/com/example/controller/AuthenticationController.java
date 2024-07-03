@@ -1,3 +1,7 @@
+/*
+ * Author: Pranay
+ */
+
 package com.example.controller;
 
 import java.util.Map;
@@ -73,13 +77,11 @@ public class AuthenticationController {
 	}
 
 	class ValidationException extends RuntimeException {
-		/**
-		 * 
-		 */
+
 		private static final long serialVersionUID = 1L;
 
-		public ValidationException(String message) {
-			super(message);
+		public ValidationException(String msg) {
+			super(msg);
 		}
 	}
 
